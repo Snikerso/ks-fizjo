@@ -9,22 +9,22 @@ export const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family:  "first";
         font-weight:400;
-        src: url("/assets/fonts/Rajdhani-Light.ttf");
+        src: url("/assets/fonts/Rajdhani-Regular.ttf");
     }
     @font-face {
         font-family:  "first";
         font-weight:500;
-        src: url("/assets/fonts/Rajdhani-Light.ttf");
+        src: url("/assets/fonts/Rajdhani-Medium.ttf");
     }
     @font-face {
         font-family:  "first";
         font-weight:700;
-        src: url("/assets/fonts/Rajdhani-Light.ttf");
+        src: url("/assets/fonts/Rajdhani-SemiBold.ttf");
     }
     @font-face {
         font-family:  "first";
         font-weight:900;
-        src: url("/assets/fonts/Rajdhani-Light.ttf");
+        src: url("/assets/fonts/Rajdhani-Bold.ttf");
     }
     @font-face {
         font-family:  "first";

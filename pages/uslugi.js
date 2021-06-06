@@ -23,24 +23,25 @@ const client = createClient({
 
 export async function  getStaticProps(){
 
-  const res = await client.getEntries({ content_type: 'uslugi' })
+  const res = await client.getEntries({ content_type: 'uslugi_kategorie' })
 
   return {
     props: {
-      recipes: res.items
-    }
+      services: res.items
+    },
+    revalidate: 1
   }
  
 }
 
-export default function ServicesPage ({recipes}){
-console.log(recipes)
+export default function ServicesPage ({services}){
+  console.log("",services)
   return (
     <StyledWrapper>
       <HeadPage text={"Oferta"}/>
 
       <Accordion.Wizzard>
-        {servicesData.map((service,key)=> <Accordion.Item second key={service.id} item={service}/>)}
+        {services.map((service,key)=> <Accordion.Item second key={service.sys.id} item={service.fields}/>)}
       </Accordion.Wizzard>
     </StyledWrapper>
   )

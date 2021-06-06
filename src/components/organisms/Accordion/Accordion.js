@@ -19,11 +19,11 @@ import IconArrowUp from '../../atoms/interface/Icons/IconArrowUp';
 
 const Tab = React.forwardRef((props,ref) => {
   const { currentElement } = useAccordionContext();
-  const { title, page, src, onClick } = props;
+  const { title, page, image, onClick } = props;
 
   return (
     <StyledTab isActive={currentElement.includes(page)} onClick={onClick} ref={ref}  >
-      <Image width={'300px'} height={'300px'} src={`/assets/images/interface/${src}`} alt={"lala"}/>
+      <Image width={image.file.details.image.width} height={image.file.details.image.height} src={`https:${image.file.url}`} alt={image.file.description}/>
       <h4>{title.toUpperCase()}</h4>
     </StyledTab>
   );
@@ -39,7 +39,6 @@ const Closer = ({  page, onClick }) => {
   );
 };
 
-
 const Item= React.forwardRef((props, ref) => {
   const {
     index,
@@ -51,7 +50,7 @@ const Item= React.forwardRef((props, ref) => {
 
   const { currentElement, setCurrentElement , currentElementVisible, setCurrentElementVisible} = useAccordionContext();
   const tabRef = useRef(null)
-  
+
   const handleToogleDetail = (index,tabRef) => {
     if (!currentElement.includes(index)) {
       setCurrentElement([...currentElement, currentElement[index]=index]);
@@ -68,16 +67,15 @@ const Item= React.forwardRef((props, ref) => {
 
   if(second){
     return(
-      
       <>
         <StyledWrapper second >
-            <Tab ref={tabRef} title={item.title} page={index} src={item.img} onClick={() => handleToogleDetail(index,tabRef)} />
+            <Tab ref={tabRef} title={item.rodzajUslug} page={index} image={item.zdjcie.fields} onClick={() => handleToogleDetail(index,tabRef)} />
             {isHidden ?
               <div>
                 {item.list.map((detail,key )=>{
                   return(
                     <>
-                      {/* <StyledDetails isActive={isActive}  key={key} second href={`/uslugi/${detail.slug}`} > */}
+                      {/* <StyledDetails isActive={isActive} key={key} second href={`/uslugi/${detail.slug}`} > */}
                         <div>
                           <Head headType={3} text={detail.title}/>
                           <p>{detail.description_short}</p>
@@ -87,7 +85,7 @@ const Item= React.forwardRef((props, ref) => {
                             <Price price={detail.price}/>
                             <Time time={detail.time}/>
                           </StyledWrapperTimeAndPrice>
-                          {/* <Link href={`/uslugi/${detail.slug}`}/> */}
+                          <Link href={`/uslugi/${detail.slug}`}>Więcej</Link>
                         </div>
                       {/* </StyledDetails> */}
                     </>
