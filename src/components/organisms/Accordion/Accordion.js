@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import React, { Children, useRef, useState } from 'react';
-import IconArrow from '../../atoms/interface/Icons/IconArrow';
-import Price from '../../atoms/interface/Price/Price';
-import Time from '../../atoms/interface/Time/Time';
-import Image from '../../atoms/interface/Image/Image';
-import Head from '../../atoms/heads/Heads';
+import IconArrow from '/src/components/atoms/interface/Icons/IconArrow';
+import Price from '/src/components/atoms/interface/Price/Price';
+import Time from '/src/components/atoms/interface/Time/Time';
+import Image from '/src/components/atoms/interface/Image/Image';
+import Head from '/src/components/atoms/heads/Heads';
 import { AccordionProvider, useAccordionContext } from './context';
 
 import {

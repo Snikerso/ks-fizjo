@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-import FacebookEmbadedBg from "../../atoms/interface/FacebookEmbadedBg/FacebookEmbadedBg"
+import FacebookEmbadedBg from "/src/components/atoms/interface/FacebookEmbadedBg/FacebookEmbadedBg"
 
 const StyledWrapper = styled.div`
 

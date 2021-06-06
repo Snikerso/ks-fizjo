@@ -1,8 +1,8 @@
 import * as React from "react"
-import HeadPage from "src/components/atoms/heads/HeadPage"
-import Phone from "src/components/atoms/interface/Phone/Phone"
-import Mail from "src/components/atoms/interface/Mail/Mail"
-import ButtonFacebook from "../components/atoms/buttons/ButtonFacebook/ButtonFacebook"
+import HeadPage from "/src/components/atoms/heads/HeadPage"
+import Phone from "/src/components/atoms/interface/Phone/Phone"
+import Mail from "/src/components/atoms/interface/Mail/Mail"
+import ButtonFacebook from "/src/components/atoms/buttons/ButtonFacebook/ButtonFacebook"
 import styled from "styled-components"
 
 const StyledWrapper = styled.div`

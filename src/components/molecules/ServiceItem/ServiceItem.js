@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import Button from '../atoms/Button';
-import Paragraph from '../atoms/Paragraph';
-import Authors from '../atoms/Project/Authors';
-import Title from '../atoms/Project/Title';
-import SquareGradient from '../atoms/SquareGradient';
+import Button from '/src/components/atoms/Button';
+import Paragraph from '/src/components/atoms/Paragraph';
+import Authors from '/src/components/atoms/Project/Authors';
+import Title from '/src/components/atoms/Project/Title';
+import SquareGradient from '/src/components/atoms/SquareGradient';
 
 const StyledWrapper = styled.div`
     position: relative;

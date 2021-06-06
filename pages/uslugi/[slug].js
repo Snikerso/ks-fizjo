@@ -36,6 +36,7 @@ export async function getStaticProps({params}) {
 
 const ServicesDetails = ({service}) => {
   const {opis} = service.fields
+  console.log(opis)
   return (
     <div>
       <div>{opis.content.map(item=> {

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import IconCalendar from '../../interface/Icons/IconCalendar'
+import IconCalendar from '/src/components/atoms/interface/Icons/IconCalendar'
 
 const StyledLink = styled.a`
     text-decoration:none;

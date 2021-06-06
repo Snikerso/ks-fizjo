@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import MethodItem from 'src/components/molecules/MethodItem/MethodItem'
+import MethodItem from '/src/components/molecules/MethodItem/MethodItem'
 
 const StyledWrapper = styled.div`
     display:flex;

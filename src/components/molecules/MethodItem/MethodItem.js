@@ -1,10 +1,10 @@
-import { useStaticQuery, graphql} from 'gatsby';
+
 import React from 'react';
 import styled from 'styled-components';
-import Paragraph from '../../atoms/paragraphs/Paragraph';
-import Link from 'src/components/atoms/interface/Link/Link';
-import Head from 'src/components/atoms/Heads/Heads';
-import Image from '../../atoms/interface/Image/Image';
+import Paragraph from '/src/components/atoms/paragraphs/Paragraph';
+import Link from '/src/components/atoms/interface/Link/Link';
+import Head from '/src/components/atoms/Heads/Heads';
+import Image from '/src/components/atoms/interface/Image/Image';
 
 
 const StyledWrapper = styled.div`
@@ -94,41 +94,17 @@ const StyledLink = styled(Link)`
 
 const MethodItem = ({item}) => {
     let {title,description_short, slug, img } = item
-    const data = useStaticQuery(graphql`
-
-    query {
-      allFile(
-        filter: {
-          extension: { regex: "/(png)/" }
-          relativePath: { regex: "/service/i" }
-        }
-      ) {
-        edges {
-          node {
-            base
-            childImageSharp {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  
-  const image = data.allFile.edges.find(item => item.node.base===img)
 
     return (
             <StyledWrapper>
-                <Link to={slug}>
+                {/* <Link to={slug}>
                   <Image fluid={image.node.childImageSharp.fluid} />
                 </Link>
                 <StyledWrapperInner>
                     <Head headType={3} text={title} />
                     <Paragraph text={description_short} />
                     <StyledLink to={slug}>Więcej</StyledLink>
-                </StyledWrapperInner>
+                </StyledWrapperInner> */}
             </StyledWrapper>
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Head from '../../atoms/heads/Heads'
-import PriceItem from '../../molecules/PriceItem/PriceItem'
+import Head from '/src/components/atoms/heads/Heads'
+import PriceItem from '/src/components/molecules/PriceItem/PriceItem'
 
 const StyledWrapper = styled.div`
     display:flex;

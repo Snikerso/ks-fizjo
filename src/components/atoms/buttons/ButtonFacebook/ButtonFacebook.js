@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import IconFacebook from '../../interface/Icons/IconFacebook'
+import IconFacebook from '/src/components/atoms/interface/Icons/IconFacebook'
 
 
 const StyledWrapper = styled.div`
