@@ -2,44 +2,44 @@ import * as React from "react"
 import {createClient} from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-// const client = createClient({
-//   space: 'uqo1vba8ib2m',
-//   accessToken: 'e9jBuvpH3wUaiAJyqWZtqmu4q-moE3FRqBorkMa2KjU',
-// })
+const client = createClient({
+  space: 'uqo1vba8ib2m',
+  accessToken: 'e9jBuvpH3wUaiAJyqWZtqmu4q-moE3FRqBorkMa2KjU',
+})
 
-// export const getStaticPaths = async () => {
+export const getStaticPaths = async () => {
 
-//   const res = await client.getEntries({
-//    content_type:'uslugi'
-//  })
-//  const paths = res.items.map(item => {
-//    return {
-//      params: { slug: item.fields.slug}
-//    }
-//  })
+  const res = await client.getEntries({
+   content_type:'uslugi'
+ })
+ const paths = res.items.map(item => {
+   return {
+     params: { slug: item.fields.slug}
+   }
+ })
 
-//  return {
-//    paths,
-//    fallback:true
-//  }
-// }
+ return {
+   paths,
+   fallback:true
+ }
+}
 
-// export async function getStaticProps({params}) {
-//   const {items} = await client.getEntries({
-//     content_type:'uslugi',
-//     'fields.slug': params.slug
-//   })
-//   return {
-//     props: { service: items[0]}
-//   }
-// }
+export async function getStaticProps({params}) {
+  const {items} = await client.getEntries({
+    content_type:'uslugi',
+    'fields.slug': params.slug
+  })
+  return {
+    props: { service: items[0]}
+  }
+}
 
 const ServicesDetails = ({service}) => {
-  // const {opis} = service.fields
+  const {opis} = service.fields
   // console.log(opis)
   return (
     <div>
-      {/* <div>{opis.content.map(item=> {
+      <div>{opis.content.map(item=> {
         console.log(item) 
         if(item.content[0].value === ""){
           return <><br/></>
@@ -48,7 +48,7 @@ const ServicesDetails = ({service}) => {
           return documentToReactComponents(item)
         }
         })}
-      </div> */}
+      </div>
     </div>
   )
 }
