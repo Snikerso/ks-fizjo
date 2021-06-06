@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 
  return {
    paths,
-   fallback:true
+   fallback:false
  }
 }
 
@@ -36,7 +36,7 @@ export async function getStaticProps({params}) {
 
 const ServicesDetails = ({service}) => {
   const {opis} = service.fields
-  // console.log(opis)
+  console.log(service)
   return (
     <div>
       <div>{opis.content.map(item=> {
