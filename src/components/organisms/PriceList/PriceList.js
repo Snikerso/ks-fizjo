@@ -52,15 +52,14 @@ const PriceList = ({list}) => {
         <>
             <StyledWrapper>
                 {list.map(priceItem => {
-
                     return(
                         <>
                             <StyledWrapperInner>
                                 <StyledPriceHeader> 
-                                    <Head headType={4} text={priceItem.title.toUpperCase()}/>
+                                    <Head headType={4} text={priceItem.fields.rodzajUslug.toUpperCase()}/>
                                 </StyledPriceHeader>
-                                {priceItem.list.map(item =>(
-                                    <PriceItem key={item.id} item={item} />
+                                {priceItem.fields.uslugi.map(item =>(
+                                    <PriceItem key={item.sys.id} item={item.fields} />
                                 ))}
                             </StyledWrapperInner>
                         </>
