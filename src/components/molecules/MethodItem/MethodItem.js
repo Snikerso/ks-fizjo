@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Paragraph from '/src/components/atoms/paragraphs/Paragraph';
 import Link from '/src/components/atoms/interface/Link/Link';
-import Head from '/src/components/atoms/Heads/Heads';
+import Head from '/src/components/atoms/heads/Heads';
 import Image from '/src/components/atoms/interface/Image/Image';
 
 
