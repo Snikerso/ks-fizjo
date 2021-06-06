@@ -1,7 +1,7 @@
 import * as React from "react";
-import MethodList from "../components/organisms/MethodsList/MethodsList";
-import {methodsData} from "src/constants/data"
-import HeadPage from "../components/atoms/heads/HeadPage";
+import MethodList from "/src/components/organisms/MethodsList/MethodsList";
+import {methodsData} from "/constants/data"
+import HeadPage from "/src/components/atoms/heads/HeadPage";
 import styled from "styled-components";
 
 
