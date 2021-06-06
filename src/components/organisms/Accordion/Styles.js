@@ -243,7 +243,6 @@ export const StyledCloser = styled.button`
 `;
 
 export const StyledTab = styled.div`
-  position: relative;
   opacity:50%;
   width: calc(200px + (318 - 200) * ((100vw - 300px) / (1900 - 300)));
   margin-bottom: 36px;
@@ -269,7 +268,6 @@ export const StyledTab = styled.div`
   `}
 
   @media  (min-width: ${({ theme }) => theme.media.media1400}) {
-    width:calc(200px + (318 - 200) * ((100vw - 1366px) / (1900 - 1366)));
 
     h4{
 

@@ -20,10 +20,10 @@ import IconArrowUp from '../../atoms/interface/Icons/IconArrowUp';
 const Tab = React.forwardRef((props,ref) => {
   const { currentElement } = useAccordionContext();
   const { title, page, image, onClick } = props;
-
+  console.log(image)
   return (
     <StyledTab isActive={currentElement.includes(page)} onClick={onClick} ref={ref}  >
-      <Image width={image.file.details.image.width} height={image.file.details.image.height} src={`https:${image.file.url}`} alt={image.file.description}/>
+      <Image width={image.file.details.image.width} height={image.file.details.image.height}  layout="responsive" src={`https:${image.file.url}`} alt={image.file.description}/>
       <h4>{title.toUpperCase()}</h4>
     </StyledTab>
   );
@@ -50,6 +50,7 @@ const Item= React.forwardRef((props, ref) => {
 
   const { currentElement, setCurrentElement , currentElementVisible, setCurrentElementVisible} = useAccordionContext();
   const tabRef = useRef(null)
+  console.log(item)
 
   const handleToogleDetail = (index,tabRef) => {
     if (!currentElement.includes(index)) {
@@ -72,22 +73,22 @@ const Item= React.forwardRef((props, ref) => {
             <Tab ref={tabRef} title={item.rodzajUslug} page={index} image={item.zdjcie.fields} onClick={() => handleToogleDetail(index,tabRef)} />
             {isHidden ?
               <div>
-                {item.list.map((detail,key )=>{
+                {item.uslugi.map(({fields},key )=>{
                   return(
                     <>
-                      {/* <StyledDetails isActive={isActive} key={key} second href={`/uslugi/${detail.slug}`} > */}
+                      <StyledDetails isActive={isActive} key={key} second  >
                         <div>
-                          <Head headType={3} text={detail.title}/>
-                          <p>{detail.description_short}</p>
+                          <Head headType={3} text={fields.title}/>
+                          <p>{fields.krotkiOpis}</p>
                         </div>
                         <div>
                           <StyledWrapperTimeAndPrice>
-                            <Price price={detail.price}/>
-                            <Time time={detail.time}/>
+                            <Price price={fields.price}/>
+                            <Time time={fields.time}/>
                           </StyledWrapperTimeAndPrice>
-                          <Link href={`/uslugi/${detail.slug}`}>Więcej</Link>
+                          <Link href={`/uslugi/${fields.slug}`}>Więcej</Link>
                         </div>
-                      {/* </StyledDetails> */}
+                      </StyledDetails>
                     </>
                   )
                 })}
