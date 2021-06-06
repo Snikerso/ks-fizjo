@@ -1,13 +1,11 @@
 import  React, { useEffect, useRef } from "react"
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 import styled, {ThemeProvider} from 'styled-components'
-import Header from "../src/components/organisms/Header/Header"
-import {theme} from '../src/theme/theme'
-import {GlobalStyles} from '../src/theme/GlobalStyles'
-import Footer from "../src/components/organisms/Footer/Footer"
-import Aside from "../src/components/organisms/Aside/Aside"
-
+import Header from "src/components/organisms/Header/Header"
+import {theme} from 'src/theme/theme'
+import Footer from "src/components/organisms/Footer/Footer"
+import Aside from "src/components/organisms/Aside/Aside"
+import Baner from "src/assets/images/interface/baner.png"
+import "./layout.css"
 
 const StyledWrapperMainAside = styled.div`
   display:flex;
@@ -53,23 +51,18 @@ const Img = styled.img`
   }
 `
 
-export function MyApp ({ Component, pageProps})  {
+export function Layout ({ children, location})  {
   const footerRef = useRef(null)
   const mainRef = useRef(null)
   const asideRef = useRef(null)
-  const router = useRouter()
-  const isAppear = router.pathname === "/"
+
+  const isAppear = location.pathname === "/"
 
   const  listenToScroll = () => {
-    let mainRefTop
-    let footerRefTop 
+    let lastKnownScrollPosition = window.scrollY;
+    let mainRefTop = mainRef.current.getBoundingClientRect().top
+    let footerRefTop = footerRef.current.getBoundingClientRect().top - window.innerHeight
 
-    if(mainRef.current?.getBoundingClientRect()){
-      mainRefTop = mainRef.current.getBoundingClientRect().top
-      footerRefTop = footerRef.current.getBoundingClientRect().top - window.innerHeight
-  
-    }
-    
     if(footerRefTop < 0 ){
       asideRef.current.style.top = `${footerRefTop}px`
     }
@@ -94,21 +87,18 @@ export function MyApp ({ Component, pageProps})  {
 
 
   return (
-    <>
-        <GlobalStyles/>
         <ThemeProvider theme={theme}>
-            <Header location={router} />
-            {isAppear && <Img src={"/assets/images/interface/baner.png"} width={'100%'} height={'fill'}  alt={"baner - podaruj chwilę dla siebie"}/> }
+            <Header location={location} />
+            {isAppear && <Img src={Baner} alt={"baner - podaruj chwilę dla siebie"}/> }
             <StyledWrapperMainAside>
               <Main ref={mainRef}>
-                <Component {...pageProps} />
+                  {children}
               </Main>
-              <Aside ref={asideRef} location={router} />
+              <Aside ref={asideRef} location={location} />
             </StyledWrapperMainAside>
             <Footer ref={footerRef}/>
         </ThemeProvider>
-      </>
   )
 }
 
-export default MyApp
+export default Layout
