@@ -67,7 +67,7 @@ export function MyApp ({ Component, pageProps})  {
       router.events.on('routeChangeStart', handleStart);
       router.events.on('routeChangeComplete', handleComplete);
       router.events.on('routeChangeError', handleComplete);
-    }, [router]);
+    }, []);
 
   const  listenToScroll = () => {
     let mainRefTop
@@ -101,7 +101,9 @@ export function MyApp ({ Component, pageProps})  {
 })
 
 
-
+if(pageLoading){
+  return "loading"
+}
   return (
     <>
         <GlobalStyles/>
