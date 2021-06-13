@@ -100,6 +100,7 @@ export const StyledDetails = styled.div`
     background-color:  ${({theme})=>theme.colours.accent.hover};
   }
   p{
+
     font-weight:500;
     color:  ${({theme})=>theme.colours.second.default};
   }
@@ -198,8 +199,10 @@ export const StyledDetails = styled.div`
           font-size:calc(18px + (27 - 18) * ((100vw - 1366px) / (1900 - 1366)));
         }
       > :nth-child(1){
+        
           p{
-            line-height:17px;
+            font-family: second;
+            line-height: 22px;
             font-size:calc(13px + (20 - 13) * ((100vw - 1366px) / (1900 - 1366)));
           }
 

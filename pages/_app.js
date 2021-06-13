@@ -1,6 +1,5 @@
-import  React, { useEffect, useRef } from "react"
+import  React, { useEffect, useRef, useState } from "react"
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import styled, {ThemeProvider} from 'styled-components'
 import Header from "../src/components/organisms/Header/Header"
 import {theme} from '../src/theme/theme'
@@ -60,6 +59,16 @@ export function MyApp ({ Component, pageProps})  {
   const router = useRouter()
   const isAppear = router.pathname === "/"
 
+  const [pageLoading, setPageLoading] = useState(false);
+  React.useEffect(() => {
+      const handleStart = () => { setPageLoading(true); };
+      const handleComplete = () => { setPageLoading(false); };
+  
+      router.events.on('routeChangeStart', handleStart);
+      router.events.on('routeChangeComplete', handleComplete);
+      router.events.on('routeChangeError', handleComplete);
+    }, [router]);
+
   const  listenToScroll = () => {
     let mainRefTop
     let footerRefTop 
@@ -97,6 +106,9 @@ export function MyApp ({ Component, pageProps})  {
     <>
         <GlobalStyles/>
         <ThemeProvider theme={theme}>
+          {pageLoading ? <div>liad</div>:
+          (
+            <>
             <Header location={router} />
             {isAppear && <Img src={"/assets/images/interface/baner.png"} width={'100%'} height={'fill'}  alt={"baner - podaruj chwilę dla siebie"}/> }
             <StyledWrapperMainAside>
@@ -106,6 +118,10 @@ export function MyApp ({ Component, pageProps})  {
               <Aside ref={asideRef} location={router} />
             </StyledWrapperMainAside>
             <Footer ref={footerRef}/>
+            </>
+          )
+        }
+
         </ThemeProvider>
       </>
   )

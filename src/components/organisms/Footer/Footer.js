@@ -54,6 +54,17 @@ const StyledInformation = styled.div`
     margin-top:15px;
   }
 
+  a{
+    color:${({theme})=>theme.colours.second.default};
+    text-decoration:none;
+    font-weight:500; 
+    display:block;
+    text-transform: capitalize;
+    @media  (min-width: ${({ theme }) => theme.media.media1400}) {
+      font-size:calc(13px + (15 - 13) * ((100vw - 1366px) / (1900 - 1366)));
+    }
+  }
+
   ${({desktop}) =>
     desktop && css`
       display:none;
@@ -66,22 +77,6 @@ const StyledInformation = styled.div`
 
 `
 
-const StyledLink = styled(Link)`
-
-color:${({theme})=>theme.colours.second.default};
-    text-decoration:none;
-    font-weight:500; 
-
-    ${({block})=>
-        block && css`
-            display:block;
-            text-transform: capitalize;
-        `}
-
-    @media  (min-width: ${({ theme }) => theme.media.media1400}) {
-      font-size:calc(13px + (15 - 13) * ((100vw - 1366px) / (1900 - 1366)));
-  }
-`
 
 const Footer = React.forwardRef((props,ref) => {
 
@@ -91,7 +86,7 @@ const Footer = React.forwardRef((props,ref) => {
         <FooterBackground/>
       <StyledWrapperInner>
         <StyledInformation desktop> <Logo marginTop={"40px"}/></StyledInformation>
-        <StyledInformation desktop> {navigation.map(item=><StyledLink href={item.to} block>{item.text.toLowerCase()}</StyledLink>)}</StyledInformation>
+        <StyledInformation desktop> {navigation.map(item=><Link href={item.to} block>{item.text.toLowerCase()}</Link>)}</StyledInformation>
         <StyledInformation> <p>Skontakuj się</p> <Phone/><Mail/></StyledInformation>
         <StyledInformation> <p>Obserwuj mnie</p> <SocialList footer/></StyledInformation>
       </StyledWrapperInner>

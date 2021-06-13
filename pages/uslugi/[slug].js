@@ -1,13 +1,13 @@
-import * as React from "react"
+import styled from "styled-components";
 import {createClient} from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import styled from "styled-components";
-
+import { useRouter } from 'next/router';
 import HeadPage from "/src/components/atoms/heads/HeadPage";
 import Price from "/src/components/atoms/interface/Price/Price";
 import Time from "/src/components/atoms/interface/Time/Time";
 import ButtonRegister from "../../src/components/atoms/buttons/ButtonRegister/ButtonRegister";
 import Image from "../../src/components/atoms/interface/Image/Image";
+import Link from "next/link";
 
 const client = createClient({
   space: 'uqo1vba8ib2m',
@@ -174,10 +174,16 @@ function Methods({methods}){
 }
 
 const ServicesDetails = ({service}) => {
+  const router = useRouter();
+  const linkPath = router.asPath.split('/')
+  const slug = router.query.slug
+  linkPath.shift();
+
    const {title,opis,price,time,zdjcie} = service.fields
    const image = zdjcie.fields
-    return (
-      <StyledWrapperPage>
+   return (
+     <StyledWrapperPage>
+       <div><Link href={`/${linkPath[0]}`} ><div>{linkPath[0]}</div></Link>{` < ${slug}`}</div>
         <HeadPage text={title} />
         
         <StyledWrapper>
