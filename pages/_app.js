@@ -59,17 +59,20 @@ export function MyApp ({ Component, pageProps})  {
   const router = useRouter()
   const isAppear = router.pathname === "/"
 
-  const [pageLoading, setPageLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
+ 
   React.useEffect(() => {
       const handleStart = () => { 
-        
-        return setPageLoading(true); };
+        console.log("lading page")
+         setPageLoading(true); };
       const handleComplete = () => { 
-        return setPageLoading(false); };
-  
-      router.events.on('routeChangeStart', handleStart);
-      router.events.on('routeChangeComplete', handleComplete);
-      router.events.on('routeChangeError', handleComplete);
+        console.log("lading page")
+         setPageLoading(false); };
+      window.addEventListener("load",handleComplete );
+
+      // router.events.on('routeChangeStart', handleStart);
+      // router.events.on('routeChangeComplete', handleComplete);
+      // router.events.on('routeChangeError', handleComplete);
     }, []);
 
   const  listenToScroll = () => {
