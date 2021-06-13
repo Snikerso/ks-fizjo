@@ -26,7 +26,7 @@ const Main = styled.main`
     align-items:center;
     margin:0 auto;
     margin-bottom:100px;
-    padding:0 20px;
+    padding:0 40px;
     width:100%;
     min-height:120vh;
 

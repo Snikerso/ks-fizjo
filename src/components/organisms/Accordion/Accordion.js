@@ -20,7 +20,6 @@ import IconArrowUp from '../../atoms/interface/Icons/IconArrowUp';
 const Tab = React.forwardRef((props,ref) => {
   const { currentElement } = useAccordionContext();
   const { title, page, image, onClick } = props;
-  console.log(image)
   return (
     <StyledTab isActive={currentElement.includes(page)} onClick={onClick} ref={ref}  >
       <Image width={image.file.details.image.width} height={image.file.details.image.height}  layout="responsive" src={`https:${image.file.url}`} alt={image.file.description}/>
@@ -50,7 +49,6 @@ const Item= React.forwardRef((props, ref) => {
 
   const { currentElement, setCurrentElement , currentElementVisible, setCurrentElementVisible} = useAccordionContext();
   const tabRef = useRef(null)
-  console.log(item)
 
   const handleToogleDetail = (index,tabRef) => {
     if (!currentElement.includes(index)) {
@@ -100,21 +98,22 @@ const Item= React.forwardRef((props, ref) => {
     </>
     )
   } else {
+    console.log(item)
       return (
         <>
           <StyledWrapper  first >
-              <StyledSummary first onClick={() => handleToogleDetail(index)} >
-                <p>{item.title}</p>
+              <StyledSummary first onClick={() => handleToogleDetail(index)}>
+                <p>{item.fields.rodzajUslug}</p>
                 <IconArrow isActive={isActive}/>
               </StyledSummary>
                 {isActive ? (
                   <>
-                    {item.list.map(detail =>{
+                    {item.fields.uslugi.map(({fields},key) =>{
                       return(
                         <>
-                          <StyledDetails href={`/uslugi/${detail.slug}`} first>
-                            <p>{detail.title}</p>
-                            {/* <Link href={`/uslugi/${detail.slug}`}/> */}
+                          <StyledDetails key={key} href={`/uslugi/${fields.slug}`} first>
+                            <p>{fields.title}</p>
+                            <Link href={`/uslugi/${fields.slug}`}>więcej</Link>
                           </StyledDetails>
                         </>
                       )

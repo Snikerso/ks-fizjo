@@ -243,6 +243,7 @@ export const StyledCloser = styled.button`
 `;
 
 export const StyledTab = styled.div`
+  position:relative;
   opacity:50%;
   width: calc(200px + (318 - 200) * ((100vw - 300px) / (1900 - 300)));
   margin-bottom: 36px;
@@ -256,7 +257,8 @@ export const StyledTab = styled.div`
     position: absolute;
     text-align: center;
     top: 50%;
-    left: 50%;
+    left: 53%;
+    width:100%;
     transform: translate(-50%, -50%);
     font-size: calc(22px + (30 - 22) * ((100vw - 300px) / (1900 - 300)));
     color: ${({theme}) => theme.colours.white};
@@ -270,9 +272,7 @@ export const StyledTab = styled.div`
   @media  (min-width: ${({ theme }) => theme.media.media1400}) {
 
     h4{
-
       font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1900 - 300)));
-
     }
   }
 `; 

@@ -9,7 +9,17 @@ const StyledWrapper = styled.div`
     align-items:center;
     width:100px;
     padding:10px;
-    color:${({theme})=>theme.colours.second.default};
+    
+
+    
+    a{
+        color:${({theme})=>theme.colours.second.default};
+        text-decoration:none;
+        :hover {
+            color:${({theme})=>theme.colours.accent.default};
+        }
+
+    }
 
     ${({isActive,bar})=>
         (isActive && bar) && css`
@@ -26,22 +36,18 @@ const StyledWrapper = styled.div`
 
 const StyledLink = styled(Link)`
     color:${({theme})=>theme.colours.second.default};
-    text-decoration:none;
+
     text-align:center;
     font-weight:500; 
     font-size:20px;
     width:130px;
 
-    :hover {
-        color:${({theme})=>theme.colours.accent.default};
-    }
 
     ${({isActive})=>
     
         isActive && css`
             color:${({theme})=>theme.colours.accent.default};
             font-weight:bold;
-        
     `}
 
     ${({isActive,bar})=>
@@ -49,16 +55,11 @@ const StyledLink = styled(Link)`
         (isActive && bar) && css`
             color: ${({theme})=>theme.colours.second.default};
             width:100%;
-        
         `}
     @media (min-width: ${({theme})=> theme.media.media1400}){
         font-size: calc(16px + (20 - 16) * ((100vw - 1366px) / (1900 - 1366)));
 
     }
-
-
-    
-
 `
 
 const NavItem = ({to,text,location, onClick,bar}) => {

@@ -31,6 +31,11 @@ export const GlobalStyles = createGlobalStyle`
         font-weight:300;
         src: url("/assets/fonts/Rajdhani-Light.ttf");
     }
+    @font-face {
+        font-family: "second";
+        font-weight: 300;
+        src: url("/assets/fonts/JosefinSans-Light.ttf");
+    }
     
     *,*::before,*::after{
         box-sizing:border-box;

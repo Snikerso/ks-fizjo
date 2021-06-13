@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useRef } from "react"
 import {createClient} from 'contentful'
 import * as Accordion from '/src/components/organisms/Accordion/Accordion';
@@ -35,7 +37,7 @@ export async function  getStaticProps(){
 }
 
 export default function ServicesPage ({services}){
-  console.log("",services)
+
   return (
     <StyledWrapper>
       <HeadPage text={"Oferta"}/>

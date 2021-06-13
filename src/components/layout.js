@@ -84,8 +84,6 @@ export function Layout ({ children, location})  {
     }
 })
 
-
-
   return (
         <ThemeProvider theme={theme}>
             <Header location={location} />

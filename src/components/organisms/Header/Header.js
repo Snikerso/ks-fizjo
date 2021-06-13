@@ -21,9 +21,9 @@ let Header = ({location}) => {
   return (
     <StyledHeader>
         <SocialList header/>
-        <Link href={"/"}>
+
             <LogoWithName />
-        </Link>
+   
         <Navigation location={location} />
         <NavigationBar location={location} />
         <ButtonRegister header text={'ZAREZERWUJ TERMIN'}/>
