@@ -61,8 +61,11 @@ export function MyApp ({ Component, pageProps})  {
 
   const [pageLoading, setPageLoading] = useState(false);
   React.useEffect(() => {
-      const handleStart = () => { setPageLoading(true); };
-      const handleComplete = () => { setPageLoading(false); };
+      const handleStart = () => { 
+        
+        return setPageLoading(true); };
+      const handleComplete = () => { 
+        return setPageLoading(false); };
   
       router.events.on('routeChangeStart', handleStart);
       router.events.on('routeChangeComplete', handleComplete);
@@ -102,13 +105,13 @@ export function MyApp ({ Component, pageProps})  {
 
 
 if(pageLoading){
-  return "loading"
+  return <div style={{width:"30px",height:"30px",backgroundColor:"red"}}>liad</div>
 }
   return (
     <>
         <GlobalStyles/>
         <ThemeProvider theme={theme}>
-          {pageLoading ? <div>liad</div>:
+          {pageLoading ? <div style={{width:"30px",height:"30px",backgroundColor:"red"}}>liad</div>:
           (
             <>
             <Header location={router} />
