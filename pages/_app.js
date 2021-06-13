@@ -6,6 +6,7 @@ import {theme} from '../src/theme/theme'
 import {GlobalStyles} from '../src/theme/GlobalStyles'
 import Footer from "../src/components/organisms/Footer/Footer"
 import Aside from "../src/components/organisms/Aside/Aside"
+import LogoWithName from "/src/components/atoms/interface/Logo/LogoWithName"
 
 
 const StyledWrapperMainAside = styled.div`
@@ -62,12 +63,10 @@ export function MyApp ({ Component, pageProps})  {
   const [pageLoading, setPageLoading] = useState(true);
  
   React.useEffect(() => {
-      const handleStart = () => { 
-        console.log("lading page")
-         setPageLoading(true); };
       const handleComplete = () => { 
         console.log("lading page")
          setPageLoading(false); };
+
       window.addEventListener("load",handleComplete );
 
       // router.events.on('routeChangeStart', handleStart);
@@ -107,25 +106,27 @@ export function MyApp ({ Component, pageProps})  {
 })
 
 
-if(pageLoading){
-  return <div style={{width:"30px",height:"30px",backgroundColor:"red"}}>liad</div>
-}
+// if(pageLoading){
+//   return <div style={{width:"30px",height:"30px",backgroundColor:"red"}}>liad</div>
+// }
   return (
     <>
         <GlobalStyles/>
         <ThemeProvider theme={theme}>
-          {pageLoading ? <div style={{width:"30px",height:"30px",backgroundColor:"red"}}>liad</div>:
-          (
-            <>
+          {pageLoading ? 
+            <div style={{width:"100vw",height:"100vh",position:"fixed"}}>
+              <LogoWithName/>
+            </div>
+          :(<>
             <Header location={router} />
             {isAppear && <Img src={"/assets/images/interface/baner.png"} width={'100%'} height={'fill'}  alt={"baner - podaruj chwilę dla siebie"}/> }
-            <StyledWrapperMainAside>
+              <StyledWrapperMainAside>
               <Main ref={mainRef}>
-                <Component {...pageProps} />
+                  <Component {...pageProps} />
               </Main>
               <Aside ref={asideRef} location={router} />
-            </StyledWrapperMainAside>
-            <Footer ref={footerRef}/>
+              </StyledWrapperMainAside>
+              <Footer ref={footerRef}/>
             </>
           )
         }
