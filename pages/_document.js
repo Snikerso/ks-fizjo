@@ -52,11 +52,11 @@ class MyDocument extends Document {
                         fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));`
                     }} />
-            <title>lalalla</title>
+                <div id="fb-customer-chat" className="fb-customerchat"></div>
+                <title>lalalla</title>
             </>
         </Head>
         <body>
-            <div id="fb-customer-chat" className="fb-customerchat"></div>
             <div id="fb-root"></div>
             <Main />
             <NextScript />
