@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 const StyledWrapper = styled.div`
     font-family:${({theme})=>theme.fonts.first};
@@ -18,9 +19,14 @@ const StyledWrapper = styled.div`
         :hover {
             color:${({theme})=>theme.colours.accent.default};
         }
+        ${({isActive})=>
+    
+        isActive && css`
+            color:${({theme})=>theme.colours.accent.default};
+            font-weight:bold;
+        `}
 
     }
-
     ${({isActive,bar})=>
         (isActive && bar) && css`
             background-color: ${({theme})=>theme.colours.accent.default};
@@ -28,6 +34,7 @@ const StyledWrapper = styled.div`
             padding:0px;
             padding:10px 0px;
     `}
+
 
     svg{
         width:100%;
@@ -63,8 +70,9 @@ const StyledLink = styled(Link)`
 `
 
 const NavItem = ({to,text,location, onClick,bar}) => {
-    
-    const isActive = location.pathname === to
+    const router = useRouter()
+    const isActive = location.route === to
+    console.log(location)
 
 
     return (

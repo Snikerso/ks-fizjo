@@ -6,13 +6,13 @@ const StyledWrapperImage = styled.div`
 
     position: relative;
     height:100%;
+    max-width: 350px;
     width:100%;
     
     @media  (min-width: ${({ theme }) => theme.media.media1400}) {
-        /* align-items:flex-start; */
         width:calc(250px + (410 - 250) * ((100vw - 1366px) / (1900 - 1366)));
     }
-    
+
     svg{
         width:100%;
         height:100%;

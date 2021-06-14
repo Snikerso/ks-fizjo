@@ -67,8 +67,8 @@ const StyledWrapperPage = styled.div`
     align-items: flex-start;
   }
 `
-const StyledWrapperText = styled.div`
 
+const StyledWrapperText = styled.div`
   /* justify-self: flex-start; */
 
   width:100%;
@@ -80,16 +80,41 @@ const StyledWrapperText = styled.div`
     margin-bottom:30px;
   }
 `
+
+
 const StyledWrapperMeta = styled.div`
   display:flex;
-  
-  /* margin-left:-35px; */
-
-  > :nth-child(2){
-    margin-left:30px;
-    
+  flex-direction: column;
+  /* align-items: center; */
+  width:100%;
+  margin: 0 auto;
+  button{
+    margin: 0 auto;
   }
+  
 `
+const StyledWrapperTimeAndPrice = styled.div`
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 204px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  > :first-child{
+    margin-right: 30px;
+  }
+
+  @media  (min-width: ${({ theme }) => theme.media.media1400}) {
+    align-items:flex-start;
+    margin: 0 0;
+    margin-bottom: 30px;
+
+  }
+
+  
+`
+
+
 const StyledWrapperInfo = styled.div`
   display:flex;
   flex-direction:column;
@@ -106,6 +131,7 @@ const StyledWrapperInfo = styled.div`
   }
 `
 
+
 const StyledWrapperMethods = styled.div`
 align-self:flex-start;
 width:100%;
@@ -119,8 +145,9 @@ h3{
     margin-left:-35px;
 
   }
-
 `
+
+
 const Method = styled.div`
   display: flex;
   justify-content:space-between;
@@ -192,11 +219,14 @@ const ServicesDetails = ({service}) => {
               <Image width={image.file.details.image.width} height={image.file.details.image.height}  layout={"responsive"} src={`https:${image.file.url}`} alt={image.file.description}/>
             </StyledImage>
             <StyledWrapperMeta>
-              <Price price={price}/>
-              <Time time={time}/>
+              <StyledWrapperTimeAndPrice>
+                <Price price={price}/>
+                <Time time={time}/>
+
+              </StyledWrapperTimeAndPrice>
   
+              <ButtonRegister text={"ZAREZERWUJ TERMIN"}/> 
             </StyledWrapperMeta>
-            <ButtonRegister text={"ZAREZERWUJ TERMIN"}/> 
   
           {/* {service.methods && <Methods methods={service.methods}/> } */}
           

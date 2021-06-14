@@ -52,7 +52,9 @@ export const StyledSummary = styled.div`
   font-weight:500;
   width:100%;
   height: calc(67px + (80 - 67) * ((100vw - 300px) / (1600 - 300)));
-
+  p {
+    text-transform:capitalize;
+  }
 
   @media  (min-width: ${({ theme }) => theme.media.media1400}) {
     height:calc(60px + (80 - 60) * ((100vw - 1366px) / (1900 - 1366)));
@@ -100,7 +102,7 @@ export const StyledDetails = styled.div`
     background-color:  ${({theme})=>theme.colours.accent.hover};
   }
   p{
-
+    text-transform:capitalize;
     font-weight:500;
     color:  ${({theme})=>theme.colours.second.default};
   }
@@ -123,6 +125,7 @@ export const StyledDetails = styled.div`
       }
 
       p{
+        text-transform:capitalize;
         font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
 
         @media  (min-width: ${({ theme }) => theme.media.media1400}) {
@@ -160,8 +163,8 @@ export const StyledDetails = styled.div`
       > :nth-child(1){
 
         p{
-
-        font-size: calc(13px + (20 - 13) * ((100vw - 300px) / (1900 - 300)));
+          text-transform:capitalize;
+          font-size: calc(13px + (20 - 13) * ((100vw - 300px) / (1900 - 300)));
         }
       }
       > :nth-child(2){
