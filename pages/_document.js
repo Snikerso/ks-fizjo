@@ -42,6 +42,8 @@ class MyDocument extends Document {
       <Html>
         <Head>
             <>
+            
+            <div id="fb-root"></div>
             <script dangerouslySetInnerHTML={{
                 __html: `
                 var chatbox = document.getElementById('fb-customer-chat');
@@ -67,7 +69,6 @@ class MyDocument extends Document {
             </>
         </Head>
         <body>
-                <div id="fb-root"></div>
                 <div id="fb-customer-chat" className="fb-customerchat"></div>
             
             <Main />
