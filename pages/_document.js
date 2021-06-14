@@ -63,12 +63,12 @@ class MyDocument extends Document {
                 }(document, 'script', 'facebook-jssdk'));
                 `
                     }} />
-                <div id="fb-customer-chat" className="fb-customerchat"></div>
                 <title>lalalla</title>
             </>
         </Head>
         <body>
                 <div id="fb-root"></div>
+                <div id="fb-customer-chat" className="fb-customerchat"></div>
             
             <Main />
             <NextScript />
