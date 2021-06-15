@@ -27,7 +27,8 @@ export const getStaticPaths = async () => {
 
  return {
    paths,
-   fallback:false
+   fallback:true,
+   
  }
 }
 
@@ -37,8 +38,11 @@ export async function getStaticProps({params}) {
     'fields.slug': params.slug
   })
   return {
-    props: { service: items[0]}
-  }
+    props: { service: items[0]},
+    revalidate: 1
+  },
+  
+   
 }
 
 const StyledWrapper = styled.div`
@@ -71,9 +75,18 @@ const StyledWrapperPage = styled.div`
 const StyledWrapperText = styled.div`
   /* justify-self: flex-start; */
 
-  width:100%;
+  width:300px;
+
+
+  @media  (min-width: ${({ theme }) => theme.media.media700}) {
+    margin-left:120px;
+    min-width: 600px;
+  }
   @media  (min-width: ${({ theme }) => theme.media.media1400}) {
     margin-left:120px;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    color: ${({theme})=>theme.colours.second.default};
   }
 
   > p {
@@ -85,11 +98,13 @@ const StyledWrapperText = styled.div`
 const StyledWrapperMeta = styled.div`
   display:flex;
   flex-direction: column;
-  /* align-items: center; */
-  width:100%;
+  align-items: center;
   margin: 0 auto;
-  button{
-    margin: 0 auto;
+ 
+  @media  (min-width: ${({ theme }) => theme.media.media1400}) {
+    button{
+    margin-left: 30px;
+  }
   }
   
 `
@@ -97,17 +112,13 @@ const StyledWrapperTimeAndPrice = styled.div`
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 204px;
-  margin: 0 auto;
+  width:204px;
   margin-bottom: 30px;
-  > :first-child{
-    margin-right: 30px;
-  }
 
   @media  (min-width: ${({ theme }) => theme.media.media1400}) {
     align-items:flex-start;
-    margin: 0 0;
-    margin-bottom: 30px;
+    /* margin: 0 0;
+    margin-bottom: 30px; */
 
   }
 

@@ -42,9 +42,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
             <>
-
-            
-                <title>lalalla</title>
+                <title>Kamila Spłocharska - Fizjoterapia</title>
             </>
         </Head>
         <body>
