@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
@@ -11,28 +11,49 @@ const StyledWrapper = styled.div`
     width:100px;
     padding:10px;
     
-
-    
     a{
+
         color:${({theme})=>theme.colours.second.default};
         text-decoration:none;
         :hover {
             color:${({theme})=>theme.colours.accent.default};
         }
-        ${({isActive})=>
-    
-        isActive && css`
-            color:${({theme})=>theme.colours.accent.default};
-            font-weight:bold;
-        `}
-
     }
+
+
+    ${({isActive})=>
+        isActive && css`
+            font-weight:bold;
+            a{
+                color:${({theme})=>theme.colours.accent.default};
+                text-decoration:none;
+                :hover {
+                    color:${({theme})=>theme.colours.accent.default};
+                }
+
+            }`}   
+    ${({bar})=>
+        bar && css`
+            font-size:30px;
+            width:200px;
+            text-align: center;
+            a{
+                :hover {
+                color:white;
+            }
+        }`}   
+
     ${({isActive,bar})=>
         (isActive && bar) && css`
-            background-color: ${({theme})=>theme.colours.accent.default};
+            background-color: ${({theme})=> theme.colours.accent.default};
             width:100%;
             padding:0px;
             padding:10px 0px;
+            a{
+                color:white;
+                text-decoration:none;
+            }
+
     `}
 
 
@@ -41,43 +62,17 @@ const StyledWrapper = styled.div`
     }
 `
 
-const StyledLink = styled(Link)`
-    color:${({theme})=>theme.colours.second.default};
-
-    text-align:center;
-    font-weight:500; 
-    font-size:20px;
-    width:130px;
-
-
-    ${({isActive})=>
-    
-        isActive && css`
-            color:${({theme})=>theme.colours.accent.default};
-            font-weight:bold;
-    `}
-
-    ${({isActive,bar})=>
-    
-        (isActive && bar) && css`
-            color: ${({theme})=>theme.colours.second.default};
-            width:100%;
-        `}
-    @media (min-width: ${({theme})=> theme.media.media1400}){
-        font-size: calc(16px + (20 - 16) * ((100vw - 1366px) / (1900 - 1366)));
-
-    }
-`
 
 const NavItem = ({to,text,location, onClick,bar}) => {
-    const router = useRouter()
-    const isActive = location.route === to
-    console.log(location)
 
+    let isActive=  location.route === to
+    useEffect(()=>{
+        isActive = location.route === to
+    },[location])
 
     return (
         <StyledWrapper isActive={isActive} bar={bar}>
-            <StyledLink  bar={bar} onClick={onClick} isActive={isActive} href={to}>{text}</StyledLink>
+            <Link  bar={bar} onClick={onClick} isActive={isActive} href={to}>{text}</Link>
         </StyledWrapper>
     )
   }

@@ -181,6 +181,19 @@ const Method = styled.div`
 
 `
 
+const StyledNavBreadCrumbs = styled.div`
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  span{
+    margin:0px 4px;
+  }
+  > :first-child {
+   color: ${({theme})=>theme.colours.accent.default};
+   font-weight: bold;
+   text-decoration: underline;
+  }
+`
 const StyledImage = styled.div`
   width: calc(200px + (324 - 200) * ((100vw - 360px) / (1900 - 360)));
   /* height: calc(200px + (324 - 200) * ((100vw - 360px) / (1900 - 360))); */
@@ -191,23 +204,23 @@ const StyledImage = styled.div`
   }
 `
 
-function Methods({methods}){
+// function Methods({methods}){
 
-  return(
-    <StyledWrapperMethods>
-          <Head typeHead={3}  text={"Metody pracy "} />
-          { methods.map(item =>{
-            return(
-              <StyledLink to={`/metody-pracy/${item.slug}`}>
-                <Method>
-                  {item.title} <IconArrowLink/>
-                  </Method>
-              </StyledLink>
-            )})
-            }
-    </StyledWrapperMethods>
-  )
-}
+//   return(
+//     <StyledWrapperMethods>
+//           <Head typeHead={3}  text={"Metody pracy "} />
+//           { methods.map(item =>{
+//             return(
+//               <StyledLink to={`/metody-pracy/${item.slug}`}>
+//                 <Method>
+//                   {item.title} <IconArrowLink/>
+//                   </Method>
+//               </StyledLink>
+//             )})
+//             }
+//     </StyledWrapperMethods>
+//   )
+// }
 
 const ServicesDetails = ({service}) => {
   const router = useRouter();
@@ -219,7 +232,9 @@ const ServicesDetails = ({service}) => {
    const image = zdjcie.fields
    return (
      <StyledWrapperPage>
-       <div><Link href={`/${linkPath[0]}`} ><div>{linkPath[0]}</div></Link>{` < ${slug}`}</div>
+       <StyledNavBreadCrumbs>
+          <div><Link href={`/${linkPath[0]}` } ><div>{`${linkPath[0]}`}</div></Link>
+          </div><span>{" < "}</span><div>{`${slug}`}</div></StyledNavBreadCrumbs>
         <HeadPage text={title} />
         
         <StyledWrapper>

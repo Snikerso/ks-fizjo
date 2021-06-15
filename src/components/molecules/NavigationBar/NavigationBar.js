@@ -19,10 +19,7 @@ const NavPanel = styled.div`
     height: 100vh;
     overflow: hidden;
     background-color: ${({ theme }) => theme.colours.white};
-    a{
-        font-size:30px;
-        width:200px;
-    }
+
 
     > * :first-child{
         justify-self:flex-start;
@@ -49,6 +46,7 @@ const StyledWrapper = styled.nav`
     display:block;
     flex-direction:column;
     align-items:center;
+    text-align: center;
     position:absolute;
     top:15%;
     right:65px;
