@@ -40,9 +40,7 @@ export async function getStaticProps({params}) {
   return {
     props: { service: items[0]},
     revalidate: 1
-  },
-  
-   
+  }
 }
 
 const StyledWrapper = styled.div`
