@@ -64,7 +64,6 @@ export function MyApp ({ Component, pageProps})  {
  
   React.useEffect(() => {
       const handleComplete = () => { 
-        console.log("lading page")
          setPageLoading(false); };
 
       window.addEventListener("load",handleComplete );
@@ -114,7 +113,7 @@ export function MyApp ({ Component, pageProps})  {
         <GlobalStyles/>
         <ThemeProvider theme={theme}>
           {pageLoading ? 
-            <div style={{width:"100vw",height:"100vh",position:"fixed"}}>
+            <div style={{width:"100vw",height:"100vh",position:"fixed",display:"flex",alignItems:"center",justifyContent:"center"}}>
               <LogoWithName/>
             </div>
           :(<>

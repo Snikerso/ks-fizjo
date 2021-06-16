@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
 
 const StyledWrapper = styled.div`
     font-family:${({theme})=>theme.fonts.first};
@@ -12,7 +11,6 @@ const StyledWrapper = styled.div`
     padding:10px;
     
     a{
-
         color:${({theme})=>theme.colours.second.default};
         text-decoration:none;
         :hover {
@@ -31,7 +29,8 @@ const StyledWrapper = styled.div`
                     color:${({theme})=>theme.colours.accent.default};
                 }
 
-            }`}   
+            }`}
+            
     ${({bar})=>
         bar && css`
             font-size:30px;
