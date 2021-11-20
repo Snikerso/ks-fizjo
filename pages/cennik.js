@@ -1,6 +1,5 @@
 import * as React from "react";
 import {createClient} from 'contentful'
-import PriceList from "/src/components/organisms/PriceList/PriceList";
 import HeadPage from "/src/components/atoms/heads/HeadPage";
 
 const client = createClient({
@@ -22,13 +21,13 @@ export async function  getStaticProps(){
 }
 
 export default function PriceListPage({services}) {
-
-
-
   return (
     <>
         <HeadPage text={"Cennik"}/>
-        <PriceList list={services}/>
+        <p>Konsultacja fizjoterapeutyczna: 120zł</p>
+        <p>Terapia / Masaż: 120 -160zł</p>
+        <p>Dojazd 20 - 50zł</p>
+        {/* <PriceList list={services}/> */}
     </>
   )
 }

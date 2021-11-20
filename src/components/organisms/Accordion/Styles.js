@@ -102,7 +102,6 @@ export const StyledDetails = styled.div`
     background-color:  ${({theme})=>theme.colours.accent.hover};
   }
   p{
-    text-transform:capitalize;
     font-weight:500;
     color:  ${({theme})=>theme.colours.second.default};
   }
@@ -125,7 +124,6 @@ export const StyledDetails = styled.div`
       }
 
       p{
-        text-transform:capitalize;
         font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
 
         @media  (min-width: ${({ theme }) => theme.media.media1400}) {
@@ -163,7 +161,6 @@ export const StyledDetails = styled.div`
       > :nth-child(1){
 
         p{
-          text-transform:capitalize;
           font-size: calc(13px + (20 - 13) * ((100vw - 300px) / (1900 - 300)));
         }
       }

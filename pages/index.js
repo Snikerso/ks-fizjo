@@ -53,7 +53,6 @@ export async function  getStaticProps(){
 
 
 export default function IndexPage ({services,main}) {
-  console.log(main)
 
   return (
     <>

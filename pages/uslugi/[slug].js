@@ -28,7 +28,6 @@ export const getStaticPaths = async () => {
  return {
    paths,
    fallback:true,
-   
  }
 }
 
@@ -260,7 +259,7 @@ const ServicesDetails = ({service}) => {
             <div>{opis.content.map(item=> {
               console.log(item) 
               if(item.content[0].value === ""){
-                return <><br/></>
+                return <><br/><br/><br/></>
               }else{
 
                 return documentToReactComponents(item)
