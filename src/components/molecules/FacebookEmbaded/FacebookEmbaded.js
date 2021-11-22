@@ -11,7 +11,7 @@ const StyledWrapper = styled.div`
     /* width:80%; */
     /* width:100%; */
     /* overflow:scroll; */
-    height:290px;
+    height:400px;
     /* width:340px; */
 
   }

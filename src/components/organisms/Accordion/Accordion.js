@@ -81,7 +81,7 @@ const Item= React.forwardRef((props, ref) => {
                         </div>
                         <div>
                           <StyledWrapperTimeAndPrice>
-                            <Price price={fields.price}/>
+                            {/* <Price price={fields.price}/> */}
                             <Time time={fields.time}/>
                           </StyledWrapperTimeAndPrice>
                           <Link href={`/uslugi/${fields.slug}`}>Więcej</Link>
@@ -98,7 +98,6 @@ const Item= React.forwardRef((props, ref) => {
     </>
     )
   } else {
-    console.log(item)
       return (
         <>
           <StyledWrapper  first >

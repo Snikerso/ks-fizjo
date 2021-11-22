@@ -28,7 +28,7 @@ const StyledAside = styled.aside`
     }
 
     @media  (min-width: ${({ theme }) => theme.media.media1400}) {
-            right:80px;
+            right:120px;
         }
 
 

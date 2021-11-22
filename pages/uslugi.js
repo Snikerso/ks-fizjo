@@ -42,8 +42,9 @@ export default function ServicesPage ({services}){
     <StyledWrapper>
       <HeadPage text={"Oferta"}/>
 
+        {console.log(services)}
       <Accordion.Wizzard>
-        {services.map((service,key)=> <Accordion.Item second key={service.sys.id} item={service.fields}/>)}
+        {services.sort((a,b)=> a.fields.order - b.fields.order).map((service,key)=> <Accordion.Item second key={service.sys.id} item={service.fields}/>)}
       </Accordion.Wizzard>
     </StyledWrapper>
   )

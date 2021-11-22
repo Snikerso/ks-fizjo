@@ -3,9 +3,9 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: "first";
-        font-weight:300;
+        font-weight: 300;
         src: url("/assets/fonts/Rajdhani-Light.ttf");
-    } 
+    }
     @font-face {
         font-family:  "first";
         font-weight:400;

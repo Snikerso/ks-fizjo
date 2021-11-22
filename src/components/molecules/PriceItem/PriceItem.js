@@ -65,7 +65,7 @@ const PriceItem = ({item}) => {
                 <Head headType={5} text={title}/>
                 <StyledWrapperTimeAndPrice>
                     <Time time={time}/>
-                    <Price price={price}/>
+                    {/* <Price price={price}/> */}
                 </StyledWrapperTimeAndPrice>
             </StyledWrapper>
         </StyledLink>

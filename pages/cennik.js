@@ -1,6 +1,18 @@
 import * as React from "react";
 import {createClient} from 'contentful'
 import HeadPage from "/src/components/atoms/heads/HeadPage";
+import styled from "styled-components";
+
+const StyledWrapper = styled.div`
+  p{
+    margin:20px 0px;
+    font-size: 20px;
+    color: #201F1F;
+    b{
+      color: #846A61;
+    }
+  }
+`
 
 const client = createClient({
   space: 'uqo1vba8ib2m',
@@ -17,16 +29,17 @@ export async function  getStaticProps(){
     },
     revalidate: 1
   }
- 
 }
 
 export default function PriceListPage({services}) {
   return (
     <>
         <HeadPage text={"Cennik"}/>
-        <p>Konsultacja fizjoterapeutyczna: 120zł</p>
-        <p>Terapia / Masaż: 120 -160zł</p>
-        <p>Dojazd 20 - 50zł</p>
+        <StyledWrapper>
+        <p><b>Konsultacja fizjoterapeutyczna:</b> 120zł</p>
+        <p><b>Terapia / Masaż:</b> 120 -160zł</p>
+        <p><b>Dojazd:</b> 20 - 50zł</p>
+        </StyledWrapper>
         {/* <PriceList list={services}/> */}
     </>
   )

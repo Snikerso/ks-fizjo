@@ -3,11 +3,10 @@ import { useRouter } from 'next/router'
 import styled, {ThemeProvider} from 'styled-components'
 import Header from "../src/components/organisms/Header/Header"
 import {theme} from '../src/theme/theme'
-import {GlobalStyles} from '../src/theme/GlobalStyles'
 import Footer from "../src/components/organisms/Footer/Footer"
 import Aside from "../src/components/organisms/Aside/Aside"
 import LogoWithName from "/src/components/atoms/interface/Logo/LogoWithName"
-
+import '../public/assets/static/layout.css';
 
 const StyledWrapperMainAside = styled.div`
   display:flex;
@@ -37,6 +36,7 @@ const Main = styled.main`
       width:80%;
     }
     @media (min-width: ${({ theme }) => theme.media.media1400}) {
+      padding:0 100px;
       margin-left: 80px;
       align-items:flex-start;
     }
@@ -110,7 +110,6 @@ export function MyApp ({ Component, pageProps})  {
 // }
   return (
     <>
-        <GlobalStyles/>
         <ThemeProvider theme={theme}>
           {pageLoading ? 
             <div style={{width:"100vw",height:"100vh",position:"fixed",display:"flex",alignItems:"center",justifyContent:"center"}}>

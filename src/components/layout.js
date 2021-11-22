@@ -5,7 +5,6 @@ import {theme} from 'src/theme/theme'
 import Footer from "src/components/organisms/Footer/Footer"
 import Aside from "src/components/organisms/Aside/Aside"
 import Baner from "src/assets/images/interface/baner.png"
-import "./layout.css"
 
 const StyledWrapperMainAside = styled.div`
   display:flex;

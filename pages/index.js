@@ -74,7 +74,7 @@ export default function IndexPage ({services,main}) {
       <Section>
         <HeadPage marginBottom={"20px"} text={"Oferta"}/> 
         <Accordion.Wizzard>
-          {services.map(services=> <Accordion.Item  key={services.id} item={services}/>)}
+          {services.sort((a,b)=> a.fields.order - b.fields.order).map(services=> <Accordion.Item  key={services.id} item={services}/>)}
         </Accordion.Wizzard>
       </Section>
       <Section> 
@@ -82,11 +82,9 @@ export default function IndexPage ({services,main}) {
         <Image width={main[0].fields.imageVisit.fields.file.details.image.width} height={main[0].fields.imageVisit.fields.file.details.image.height}  layout={"responsive"} src={`https:${main[0].fields.imageVisit.fields.file.url}`} alt={main[0].fields.imageVisit.description}/>
         <StyledWrapperAbout>
           {main[0].fields.firstVisit.content.map(item=> {
-    
               if(item.content[0].value === ""){
                 return <><br/></>
               }else{
-
                 return documentToReactComponents(item)
               }
               })}
