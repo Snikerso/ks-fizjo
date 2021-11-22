@@ -141,13 +141,15 @@ const StyledNavBreadCrumbs = styled.div`
   display: flex;
   align-items: center;
   align-self: flex-start;
-  font-weight: bold;
+
+  font-size: 18px;
   span{
     margin:0px 4px;
   }
   > :first-child {
    color: ${({theme})=>theme.colours.accent.default};
    text-decoration: underline;
+     font-weight: bold;
    :hover{
      cursor:pointer;
 

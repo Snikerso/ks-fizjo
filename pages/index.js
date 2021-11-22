@@ -58,7 +58,7 @@ export default function IndexPage ({services,main}) {
     <>
       <Section>
         <HeadPage text={"O mnie"}/>
-        <Image width={main[0].fields.imageAbout.fields.file.details.image.width} height={main[0].fields.imageAbout.fields.file.details.image.height}  layout={"responsive"} src={`https:${main[0].fields.imageAbout.fields.file.url}`} alt={main[0].fields.imageAbout.description}/>
+        <Image width={main[0].fields.imageAbout.fields.file.details.image.width} height={main[0].fields.imageAbout.fields.file.details.image.height} priority layout={"responsive"} src={`https:${main[0].fields.imageAbout.fields.file.url}`} alt={main[0].fields.imageAbout.description}/>
         <StyledWrapperAbout>
           {main[0].fields.about.content.map(item=> {
     
