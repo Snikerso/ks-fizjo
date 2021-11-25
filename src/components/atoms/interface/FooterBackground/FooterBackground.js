@@ -14,11 +14,11 @@ const StyledSvg = styled.svg`
     }
 
 `
-const FooterBackground = ({onClick}) => {
+const FooterBackground = () => {
 
     return (
         <StyledSvg  width="100%" height="100%" viewBox="0 0 1920 292" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1950.95 52.9893C1994.49 -41.3244 668.458 13.6919 0 52.9893V291.581H1950.95V52.9893Z" fill="#F5CFAB"/>
+            <path d="M1950.95 52.9893C1994.49 -41.3244 668.458 13.6919 0 52.9893V291.581H1950.95V52.9893Z" fill="#E9C7B3"/>
         </StyledSvg>
     )
   }

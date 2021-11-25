@@ -1,15 +1,17 @@
 export const theme = {
   colours: {
     accent: {
-      default: '#F5CFAB',
+      default: '#E9C7B3',
       hover: '#EAEAEA',
       disabled: '#1B1E1E',
     },
     second: {
-      default:'#846A61'},
-      white: '#FCFCFC', 
-      grey: '#F3F3F3;',
-      black: '#201F1F',
+      default:'#846A61',
+    },
+    white: '#FCFCFC', 
+    grey: '#F3F3F3;',
+    black: '#201F1F',
+    
   },
   shadows: {
     shadowOuter: '',

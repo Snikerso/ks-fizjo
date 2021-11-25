@@ -74,7 +74,22 @@ const StyledWrapperPage = styled.div`
 const StyledWrapperText = styled.div`
   width:300px;
   font-size: 17px;
-
+  
+  p{
+    font-family: second;
+    line-height: 32px;
+    color:#201F1F;
+  }
+  li{
+    color:#201F1F;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    color: ${({theme})=>theme.colours.second.default};
+  }
+  b {
+    color: ${({theme})=>theme.colours.second.default};
+  }
+  
   @media  (min-width: ${({ theme }) => theme.media.media700}) {
     margin-left:120px;
     min-width: 600px;
@@ -82,13 +97,7 @@ const StyledWrapperText = styled.div`
   @media  (min-width: ${({ theme }) => theme.media.media1400}) {
     margin-left:120px;
   }
-  h1,h2,h3,h4,h5,h6 {
-    color: ${({theme})=>theme.colours.second.default};
-  }
 
-  > p {
-    margin-bottom:30px;
-  }
 `
 
 

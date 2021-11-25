@@ -49,11 +49,12 @@ export const StyledSummary = styled.div`
   padding: 10px 20px; 
   margin-bottom:calc(12px + (16 - 12) * ((100vw - 300px) / (1900 - 360)));
   font-size:20px;
-  font-weight:500;
+  font-weight:bold;
+
   width:100%;
   height: calc(67px + (80 - 67) * ((100vw - 300px) / (1600 - 300)));
   p {
-    text-transform:capitalize;
+    text-transform:uppercase;
   }
 
   @media  (min-width: ${({ theme }) => theme.media.media1400}) {
@@ -123,11 +124,13 @@ export const StyledDetails = styled.div`
         transform: scale(0.95);
       }
 
+
       p{
         font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
 
         @media  (min-width: ${({ theme }) => theme.media.media1400}) {
           font-size:calc(15px + (20 - 15) * ((100vw - 1366px) / (1900 - 1366)));
+          
         }
       }
       
@@ -156,6 +159,7 @@ export const StyledDetails = styled.div`
       h3{
         margin-bottom:13px;
         font-size: calc(20px + (27 - 20) * ((100vw - 300px) / (1900 - 360)));
+        
       }
 
       > :nth-child(1){
