@@ -82,7 +82,7 @@ const Item= React.forwardRef((props, ref) => {
                         <div>
                           <StyledWrapperTimeAndPrice>
                             {/* <Price price={fields.price}/> */}
-                            <Time time={fields.time}/>
+                            {/* <Time time={fields.time}/> */}
                           </StyledWrapperTimeAndPrice>
                           <Link href={`/uslugi/${fields.slug}`}>Więcej</Link>
                         </div>

@@ -198,7 +198,7 @@ const ServicesDetails = ({service}) => {
             <StyledWrapperMeta>
               <StyledWrapperTimeAndPrice>
                 {/* <Price price={price}/> */}
-                <Time time={time}/>
+                {/* <Time time={time}/> */}
 
               </StyledWrapperTimeAndPrice>
   

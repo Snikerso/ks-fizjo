@@ -19,7 +19,7 @@ const Mail = () => {
         <>
         <StyledWrapper>
           <IconMail/>
-          <p>{`k.splocharska@gmail.com`}</p>
+          <p>{`fizjoterapia.bydgoszcz@gmail.com`}</p>
         </StyledWrapper>
         </>
     )

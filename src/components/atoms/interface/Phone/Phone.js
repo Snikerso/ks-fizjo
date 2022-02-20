@@ -17,7 +17,7 @@ const Phone = () => {
         <>
         <StyledWrapper>
           <IconPhone/>
-          <p>{`663 406 297`}</p>
+          <p>{`605 828 128`}</p>
         </StyledWrapper>
         </>
     )

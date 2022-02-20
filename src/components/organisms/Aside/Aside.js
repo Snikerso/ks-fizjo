@@ -73,7 +73,7 @@ const Aside = React.forwardRef((props,ref) => {
                 <IconVoucher />
             </a>
             </Section>
-            <Head bolder>Bądź ze mną na bierząco !</Head>
+            <Head bolder>Bądź ze mną na bieżąco !</Head>
             <FacebookEmbaded/>
         </StyledAside>
     )
