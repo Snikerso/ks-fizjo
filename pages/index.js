@@ -4,6 +4,7 @@ import * as Accordion from '../src/components/organisms/Accordion/Accordion';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styled from "styled-components";
 import {createClient} from 'contentful'
+import safeJsonStringify from "safe-json-stringify";
 
 const Section = styled.section`
   display:flex;
@@ -41,8 +42,9 @@ const client = createClient({
 export async function  getStaticProps(){
 
   const res_services = await client.getEntries({ content_type: 'uslugi_kategorie' })
+
   const res_main = await client.getEntries({ content_type: 'main' })
-  return {
+ return {
     props: {
       services: res_services.items,
       main: res_main.items,
@@ -53,7 +55,7 @@ export async function  getStaticProps(){
 
 
 export default function IndexPage ({services,main}) {
-
+  console.log(services)
   return (
     <>
       <Section>
@@ -74,7 +76,7 @@ export default function IndexPage ({services,main}) {
       <Section>
         <HeadPage marginBottom={"20px"} text={"Oferta"}/> 
         <Accordion.Wizzard>
-          {services.sort((a,b)=> a.fields.order - b.fields.order).map(services=> <Accordion.Item  key={services.id} item={services}/>)}
+          {services.sort((a,b)=> a.fields.order - b.fields.order).map(service=> <Accordion.Item  key={service.rodzajUslug} item={service}/>)}
         </Accordion.Wizzard>
       </Section>
       <Section> 
