@@ -70,8 +70,8 @@ const NavItem = ({to,text,location, onClick,bar}) => {
     },[location])
 
     return (
-        <StyledWrapper isActive={isActive} bar={bar}>
-            <Link  bar={bar} onClick={onClick} isActive={isActive} href={to}>{text}</Link>
+        <StyledWrapper onClick={onClick} isActive={isActive} bar={bar}>
+            <Link  bar={bar}  isActive={isActive} href={to}>{text}</Link>
         </StyledWrapper>
     )
   }

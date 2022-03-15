@@ -5,6 +5,7 @@ import ButtonClose from "/src/components/atoms/buttons/ButtonClose/ButtonClose"
 import NavItem from "/src/components/atoms/interface/NavItem/NavItem"
 import {navigation} from "/constants/routes";
 import Logo from "/src/components/atoms/interface/Logo/Logo"
+import { useRouter } from "next/dist/client/router"
 
 
 const NavPanel = styled.div`
@@ -60,6 +61,12 @@ const StyledWrapper = styled.nav`
 
 const NavigationBar = ({location}) => {
 const [isOpen, setIsOpen] = useState(false)
+const router = useRouter()
+
+const handleClick = (to) => {
+    router.push(to)
+    setIsOpen(false)
+}
 
   return (
       <>
@@ -70,7 +77,7 @@ const [isOpen, setIsOpen] = useState(false)
         {isOpen &&   (
             <NavPanel>
                 <Logo/>
-                {navigation.map(({to, text} )=> (<NavItem bar  onClick={()=>setIsOpen(false)} id={"nav-item-line"} to={to} text={text} location={location}/>) )}
+                {navigation.map(({to, text} )=> (<NavItem bar to={to}  onClick={()=>handleClick(to)} id={"nav-item-line"} text={text} location={location}/>) )}
                 <ButtonClose onClick={()=>setIsOpen(prev =>!prev)}/>
             </NavPanel>
         )}
