@@ -46,16 +46,17 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <>
+            <meta
+              name="google-site-verification"
+              content="smm-fyI5xNBqpuIgeKXH9Lj4A_oSn01-qVHW4Vc1nZA"
+            />
             <title>Kamila Spłocharska - Fizjoterapia</title>
           </>
         </Head>
         <body>
           <div id="fb-root"></div>
           <div id="fb-customer-chat" className="fb-customerchat"></div>
-          <meta
-            name="google-site-verification"
-            content="smm-fyI5xNBqpuIgeKXH9Lj4A_oSn01-qVHW4Vc1nZA"
-          />
+
           <script
             dangerouslySetInnerHTML={{
               __html: `
