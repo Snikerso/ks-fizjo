@@ -1,33 +1,25 @@
-import { useEffect } from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import { useEffect } from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
-const Messenger = () =>{
-    useEffect(()=>{
-
-
-    })
-    return(
-        <>
-
-
-        </>
-    )
-}
+const Messenger = () => {
+  useEffect(() => {});
+  return <></>;
+};
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
             sheet.collectStyles(<App {...props} />),
-        })
+        });
 
-      const initialProps = await Document.getInitialProps(ctx)
+      const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
         styles: (
@@ -36,9 +28,9 @@ class MyDocument extends Document {
             {sheet.getStyleElement()}
           </>
         ),
-      }
+      };
     } finally {
-      sheet.seal()
+      sheet.seal();
     }
   }
 
@@ -50,21 +42,23 @@ class MyDocument extends Document {
     // <div id="fb-customer-chat" class="fb-customerchat">
     // </div>
 
-
-
     return (
       <Html>
         <Head>
-            <>
-                <title>Kamila Spłocharska - Fizjoterapia</title>
-            </>
+          <>
+            <title>Kamila Spłocharska - Fizjoterapia</title>
+          </>
         </Head>
         <body>
-            
-            <div id="fb-root"></div>
-            <div id="fb-customer-chat" className="fb-customerchat"></div>
-            <script dangerouslySetInnerHTML={{
-                __html: `
+          <div id="fb-root"></div>
+          <div id="fb-customer-chat" className="fb-customerchat"></div>
+          <meta
+            name="google-site-verification"
+            content="smm-fyI5xNBqpuIgeKXH9Lj4A_oSn01-qVHW4Vc1nZA"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
                 var chatbox = document.getElementById('fb-customer-chat');
                 chatbox.setAttribute("page_id", "1626967450920148");
                 chatbox.setAttribute("attribution", "biz_inbox");
@@ -82,15 +76,16 @@ class MyDocument extends Document {
                     js.src = 'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js';
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
-                `
-                    }} />
-            
-            <Main />
-            <NextScript />
+                `,
+            }}
+          />
+
+          <Main />
+          <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;
