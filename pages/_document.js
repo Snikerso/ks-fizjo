@@ -50,6 +50,10 @@ class MyDocument extends Document {
               name="google-site-verification"
               content="smm-fyI5xNBqpuIgeKXH9Lj4A_oSn01-qVHW4Vc1nZA"
             />
+            <meta
+              name="google-site-verification"
+              content="smm-fyI5xNBqpuIgeKXH9Lj4A_oSn01-qVHW4Vc1nZA"
+            />
             <title>Kamila Spłocharska - Fizjoterapia</title>
           </>
         </Head>
