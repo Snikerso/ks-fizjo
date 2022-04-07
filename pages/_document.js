@@ -46,10 +46,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <>
-
-            <meta name="google-site-verification" content="iCOoUr1Ge4n3m7zQLk5QMBIy9mlQ3v_6z1cz3XMZNek" />
-
             <title>Kamila Spłocharska - Fizjoterapia</title>
+            <meta
+              name="google-site-verification"
+              content="iCOoUr1Ge4n3m7zQLk5QMBIy9mlQ3v_6z1cz3XMZNek"
+            />
           </>
         </Head>
         <body>
